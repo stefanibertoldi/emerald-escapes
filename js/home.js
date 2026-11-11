@@ -1,0 +1,4 @@
+// Show three featured experiences using the shared experience dataset.
+const featured = document.querySelector('#featured-grid');
+const chosen = [experiences[3], experiences[7], experiences[12]];
+featured.innerHTML = chosen.map(item => `<article class="experience-card"><div class="card-image-wrap"><img src="images/experiences/${item.image}" alt="Atmospheric Irish countryside image illustrating ${item.title}" width="600" height="750" loading="lazy"></div><div class="card-content"><span class="card-category">Curated escape</span><h3>${item.title}</h3><p>${item.description}</p><div class="card-meta"><span>${item.location}</span><span>${item.duration}</span></div><div class="card-bottom"><strong>From €${item.price}</strong><a class="text-link" href="contact/contact.html?experience=${encodeURIComponent(item.title)}">Enquire ↗</a></div></div></article>`).join('');
